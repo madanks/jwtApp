@@ -24,8 +24,10 @@ public class TaskController {
 	private TaskDAO taskRepository;
 
 	@PostMapping
-	public void addTask(@RequestBody Task task) {
+	public String addTask(@RequestBody Task task) {
+		System.out.println("================================================addTask");
 		taskRepository.save(task);
+		return "Success";
 	}
 
 	@GetMapping
@@ -35,6 +37,7 @@ public class TaskController {
 
 	@PutMapping("/{id}")
 	public void editTask(@PathVariable long id, @RequestBody Task task) {
+		System.out.println("================================================getTask");
 		Task existingTask = taskRepository.findOne(id);
 		Assert.notNull(existingTask, "Task not found");
 		existingTask.setDescription(task.getDescription());

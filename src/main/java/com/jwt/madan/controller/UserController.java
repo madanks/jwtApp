@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jwt.madan.domain.User;
+import com.jwt.madan.domain.AppUser;
 import com.jwt.madan.repository.UserDAO;
 
 
@@ -22,7 +22,7 @@ public class UserController {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@PostMapping("/sign-up")
-	public void signUp(@RequestBody User user) {
+	public void signUp(@RequestBody AppUser user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		applicationUserRepository.save(user);
 	}

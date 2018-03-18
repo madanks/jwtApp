@@ -2,10 +2,10 @@ package com.jwt.madan.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.jwt.madan.domain.User;
+import com.jwt.madan.domain.AppUser;
 
-public interface UserDAO extends JpaRepository<User, Long> {
+public interface UserDAO extends JpaRepository<AppUser, Long> {
 	
-	User findByUsername(String username);
+	AppUser findByUsername(String username);
 
 }
