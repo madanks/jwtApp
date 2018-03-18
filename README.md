@@ -1,7 +1,11 @@
 # How to Run project 
 
 Step 1: Clone project and set up projet
-Step 2: Run Project spring-boot:run
+
+Step 2: Run Project
+
+ 		spring-boot:run
+ 
 Step 3: Sign up the app
 
           Content-Type: application/json
@@ -14,6 +18,7 @@ Step 3: Sign up the app
       
       
 Step 4: Login
+
           Content-Type: application/json
           POST
           {
@@ -24,6 +29,7 @@ Step 4: Login
       #capture jwt in response header 
        
 Step 5:  Add Task  without JWT token
+
         Content-Type: application/json
         POST
         Response:
@@ -39,6 +45,7 @@ Step 5:  Add Task  without JWT token
       
       
 Step 6:  Add Task  with JWT token
+
          Content-Type: application/json
           POST
           Authorization: Bearer xxx.yyy.zzz
